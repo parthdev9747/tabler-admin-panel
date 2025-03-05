@@ -1,0 +1,68 @@
+.moonicon{
+    margin-right: 10px;
+}
+
+.text-red-600, .error{
+    color: red;
+}
+
+.dt-container .dt-length {
+    display: flex;
+}
+
+.dt-container .dt-length select {
+    --tblr-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a97ab' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    display: block;
+    width: 100%;
+    padding: .4375rem 2.25rem .4375rem .75rem;
+    font-family: var(--tblr-font-sans-serif);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.4285714286;
+    color: var(--tblr-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--tblr-bg-forms);
+    background-image: var(--tblr-form-select-bg-img),var(--tblr-form-select-bg-icon,none);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: var(--tblr-border-width) solid var(--tblr-border-color);
+    border-radius: var(--tblr-border-radius);
+    box-shadow: var(--tblr-box-shadow-input);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.dt-container .dt-length label{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: rgb(108 122 145);
+}
+
+.dt-container .dt-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dt-container .dt-search input {
+    display: block;
+    width: 100%;
+    padding: .4375rem .75rem;
+    font-family: var(--tblr-font-sans-serif);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.4285714286;
+    color: var(--tblr-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--tblr-bg-forms);
+    background-clip: padding-box;
+    border: var(--tblr-border-width) solid var(--tblr-border-color);
+    border-radius: var(--tblr-border-radius);
+    box-shadow: var(--tblr-box-shadow-input);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
