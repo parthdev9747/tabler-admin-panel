@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\GlassCategoryController;
+use App\Http\Controllers\CaseCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
@@ -30,6 +33,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
     Route::resource('user', UserController::class);
+
+    Route::post('product-category/change-status', [ProductCategoryController::class, 'changeStatus']);
+    Route::resource('product-category', ProductCategoryController::class);
+
+    Route::post('glass-category/change-status', [GlassCategoryController::class, 'changeStatus']);
+    Route::resource('glass-category', GlassCategoryController::class);
+
+    Route::post('case-category/change-status', [CaseCategoryController::class, 'changeStatus']);
+    Route::resource('case-category', CaseCategoryController::class);
 });
 
 require __DIR__ . '/auth.php';

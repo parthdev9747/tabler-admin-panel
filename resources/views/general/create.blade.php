@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Permissions')
+@section('page-title', $module_name)
 
 @section('content')
     <div class="container-fluid">

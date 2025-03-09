@@ -1,5 +1,3 @@
-{{-- File: resources/views/users/index.blade.php --}}
-
 @extends('layouts.app')
 
 @section('page-title', $module_name)
@@ -10,8 +8,8 @@
             <div class="card-header">
                 <h3 class="card-title">{{ $module_name }} {{ __('messages.list') }}</h3>
                 <div class="card-actions">
-                    @can(auth()->user()->can('role-create'))
-                        <a href="{{ route('role.create') }}" class="btn btn-primary btn-3">
+                    @canany('add-product-category')
+                        <a href="{{ route('product-category.create') }}" class="btn btn-primary btn-3">
                             <!-- Download SVG icon from http://tabler.io/icons/icon/plus -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -42,7 +40,12 @@
     <script>
         function deleteRecord(id) {
             let url = '{{ $module_route }}/' + id;
-            deleteRecordByAjax(url, "{{ $module_name }}", 'roles-table');
+            deleteRecordByAjax(url, "{{ $module_name }}", 'product-categories-table');
+        }
+
+        function updateStatus(id) {
+            let url = '{{ $module_route }}/change-status';
+            changeStatusByAjax(url, 'product-categories-table', id);
         }
     </script>
 @endpush

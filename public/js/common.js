@@ -30,4 +30,25 @@ $(document).ready(function() {
             }
         })
     }
+
+    changeStatusByAjax = (url, tableId, id) => {
+        axios.post(url, { id: id }).then((response) => {
+            if (response.data.status) {
+                if (response.data.type === 'warning') {
+                    window.LaravelDataTables[tableId].ajax.reload(null, false)
+                    toastr.warning(response.data.message);
+                } else {
+                    toastr.success(response.data.message);
+                }
+            } else {
+                toastr.error(response.data.message);
+            }
+        }).catch((error) => {
+            console.log(error);
+            
+            let data = error.response.data
+            toastr.error(data.message);
+        });
+           
+    }
 });

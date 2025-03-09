@@ -95,7 +95,7 @@ class RoleController extends Controller implements HasMiddleware
     {
         try {
 
-            $role->update(['name' => strtolower(trim($request->name))]);
+            $role->update(['name' => trim($request->name)]);
 
             $permissionsID = array_map(
                 function ($value) {
@@ -125,7 +125,7 @@ class RoleController extends Controller implements HasMiddleware
             $response['message'] = __('messages.role') . ' ' . __('messages.deleted_successfully');
             $response['status'] = true;
         } else {
-            $response['message'] = $this->moduleName . " not Found!";
+            $response['message'] = __('messages.role') . " not Found!";
             $response['status'] = false;
         }
         return response()->json($response);

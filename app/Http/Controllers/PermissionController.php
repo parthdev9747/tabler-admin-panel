@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use App\DataTables\PermissionsDataTable;
 use App\Http\Requests\PermissionRequest;
